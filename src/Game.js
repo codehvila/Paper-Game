@@ -9,7 +9,6 @@ function Game() {
 
   return (
     <div>
-      <p>Score: {score}</p>
       <button
         style={{
           fontSize: 100,
