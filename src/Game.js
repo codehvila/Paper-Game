@@ -1,8 +1,12 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { gameScore } from "./atoms";
+import { paperSize } from "./selectors";
 
 function Game() {
   const [score, setScore] = useRecoilState(gameScore);
+
+  const fontSize = useRecoilValue(paperSize);
+
   const paperClick = () => {
     setScore(score + 1);
   };
@@ -11,7 +15,7 @@ function Game() {
     <div>
       <button
         style={{
-          fontSize: 100,
+          fontSize,
           cursor: "pointer",
           background: "transparent",
           border: 0,
