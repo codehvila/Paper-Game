@@ -1,9 +1,15 @@
 import { useRecoilValue } from "recoil";
-import { gameScore } from "./atoms";
+import { gameScore, useResetScore } from "./atoms";
 
 function Score() {
   const score = useRecoilValue(gameScore);
-  return <h3>Score: {score}</h3>;
+  const resetScore = useResetScore();
+  return (
+    <div>
+      <button onClick={resetScore}>Reset Score</button>
+      <h3>Score: {score}</h3>
+    </div>
+  );
 }
 
 export default Score;
