@@ -10,4 +10,19 @@ const paperSize = selector({
   },
 });
 
-export { paperSize };
+const fetchHighScores = async () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(303);
+    }, 1500);
+  });
+};
+
+const highScores = selector({
+  key: "highScores",
+  get: async ({ get }) => {
+    return await fetchHighScores();
+  },
+});
+
+export { paperSize, highScores };
